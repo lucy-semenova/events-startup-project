@@ -8,4 +8,3 @@ dist
 
 # Local databases
 *.sqlite3
-db.json
