@@ -1,0 +1,75 @@
+.eventCard {
+  list-style: none;
+  padding: 24px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
+  min-height: 520px;
+}
+
+.eventCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.eventTitle {
+  margin: 0;
+  font-size: 1.7rem;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+.eventType {
+  width: fit-content;
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--color-pill-bg);
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.eventInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-muted);
+}
+
+.eventInfo svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.eventInfo p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.eventDescription {
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.buyTicketButton {
+  margin-top: auto;
+  padding: 14px;
+  border-radius: var(--radius-button);
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.buyTicketButton:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,11 @@
+.DS_STORE
+.env
+node_modules
+
+# Build / cache
+dist
+.vite
+
+# Local databases
+*.sqlite3
+db.json

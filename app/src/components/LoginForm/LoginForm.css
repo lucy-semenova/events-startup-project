@@ -1,0 +1,88 @@
+.loginForm,
+.registerForm {
+  width: 100%;
+  max-width: 420px;
+  margin: 24px auto;
+  padding: 28px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loginForm input,
+.registerForm input {
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-button);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.loginForm input:focus,
+.registerForm input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(31, 130, 199, 0.15);
+}
+
+.loginForm button,
+.registerForm button {
+  margin-top: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-button);
+  background: var(--color-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.loginForm button:hover,
+.registerForm button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.errorMessage {
+  margin: 0;
+  color: crimson;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.successMessage {
+  margin: 0;
+  color: green;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.switchAuthText {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.loginCloseButton {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-button);
+  background: var(--color-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.loginCloseButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}

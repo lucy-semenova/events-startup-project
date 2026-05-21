@@ -1,0 +1,197 @@
+.event-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  align-items: center;
+  z-index: 1000;
+}
+.event-detail {
+  background: var(--color-card);
+  border-radius: var(--radius-card);
+  width: 100%;
+  max-width: 620px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 32px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+  position: relative;
+}
+
+.event-detail h2 {
+  margin: 40px auto;
+  padding: 10px;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.event-detail label {
+  font-weight: 700;
+  color: var(--color-text);
+}
+.event-detail input {
+  width: 90px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.event-detail button {
+  margin-top: 12px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: var(--radius-button);
+  background: var(--color-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.event-detail button:hover {
+  background: #176ba5;
+  transform: translateY(-1px);
+}
+.cartMessage {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: var(--radius-card);
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+.cartMessage p {
+  margin: 0 0 16px;
+  color: #166534;
+  font-weight: 800;
+}
+.cartMessage p::before {
+  content: "✓ ";
+}
+.cartMessageActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cartMessageActions button,
+.goToCartButton {
+  display: inline-flex;
+  align-items: center;  
+  justify-content: center;
+  min-width: 180px;
+  height: 52px;
+  margin: 0;
+  padding: 0 20px;
+  border-radius: var(--radius-button);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+.cartMessageActions button {
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  color: var(--color-text);
+}
+.quantityButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--color-primary);
+  color: white;
+
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.quantityValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 24px;
+  height: 36px;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticketQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.ticketQuantity p {
+  margin: 0;
+  font-weight: 700;
+}
+.goToCartButton {
+  border: none;
+  background: var(--color-primary);
+  color: white;
+}
+
+.cartMessageActions button:hover,
+.goToCartButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

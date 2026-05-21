@@ -1,0 +1,23 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: large;
+}
+:root {
+  --color-primary: #1f82c7;
+  --color-text: #1e1e1e;
+  --color-muted: #444;
+  --color-border: #e2e2e2;
+  --color-card: #ffffff;
+  --color-pill-bg: #f1eeff;
+
+  --radius-card: 20px;
+  --radius-button: 12px;
+
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
