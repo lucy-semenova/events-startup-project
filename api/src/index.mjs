@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 const apiRouter = express.Router();
 function readDb() {
-  const data = fs.readFileSync("./db.json", "utf-8");
+  const data = fs.readFileSync(new URL("../db.json", import.meta.url), "utf-8");
   return JSON.parse(data);
 }
 
