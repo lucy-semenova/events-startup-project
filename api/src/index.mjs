@@ -136,6 +136,9 @@ apiRouter.get("/orders", (req, res) => {
   const userOrders = orders.filter((order) => order.userEmail === userEmail);
   res.json(userOrders);
 });
+app.get("/", (req, res) => {
+  res.send("Event Startup API is running");
+});
 app.use("/api", apiRouter);
 
 const PORT = process.env.PORT || 3001;
