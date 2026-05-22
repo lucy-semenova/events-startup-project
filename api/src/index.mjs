@@ -5,7 +5,14 @@ import bodyParser from "body-parser";
 import fs from "fs";
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://events-startup-project-app.onrender.com",
+    ],
+  }),
+);
 app.use(bodyParser.json());
 
 const apiRouter = express.Router();
