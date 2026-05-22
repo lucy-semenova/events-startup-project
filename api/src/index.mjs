@@ -22,7 +22,7 @@ apiRouter.get("/", (req, res) => {
 
 apiRouter.get("/events", (req, res) => {
   console.log("GET /api/events was called");
-console.log("DB path:", new URL("../db.json", import.meta.url));
+  console.log("DB path:", new URL("../db.json", import.meta.url));
   const searchText = req.query.q;
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 4;

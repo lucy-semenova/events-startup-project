@@ -58,7 +58,7 @@ export default function Layout({ children, onLoginClick }) {
       <main className="mainContent">{children}</main>
 
       <footer className="footer">
-        <p>© {new Date().getFullYear()} Event Startup</p>
+        <p>© 2026 Event Startup</p>
       </footer>
     </div>
   );

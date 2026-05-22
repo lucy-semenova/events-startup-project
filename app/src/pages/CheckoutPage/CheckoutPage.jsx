@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useCart } from "../../context/CartContext";
 import api from "../../services/api";
 import "./CheckoutPage.css";
-import { Link } from "react-router-dom";
 
 export default function CheckoutPage({ onLoginClick }) {
   const navigate = useNavigate();
@@ -23,22 +22,24 @@ export default function CheckoutPage({ onLoginClick }) {
           ← Back to events
         </Link>
         <p>You need to log in before checkout.</p>
-         <button className="primaryButton" onClick={onLoginClick}>
-        Go to login
-      </button>
-    </main>
-  );
-}
+        <button className="primaryButton" onClick={onLoginClick}>
+          Go to login
+        </button>
+      </main>
+    );
+  }
 
   if (cartItems.length === 0 && !success) {
     return (
       <main className="checkoutPage">
-        <h1>Checkout</h1>
+        <h1>Order summary</h1>
         <Link to="/" className="backLink">
           ← Back to events
         </Link>
         <p>Your cart is empty.</p>
-        <button onClick={() => navigate("/")}>Browse events</button>
+        <button className="primaryButton" onClick={() => navigate("/")}>
+          Browse events
+        </button>
       </main>
     );
   }
@@ -84,14 +85,12 @@ export default function CheckoutPage({ onLoginClick }) {
       <Link to="/" className="backLink">
         ← Back to events
       </Link>
-      <h1>Checkout</h1>
+      <h1>Order summary</h1>
 
       {error && <p className="checkoutError">{error}</p>}
       {success && <p className="checkoutSuccess">{success}</p>}
 
-      <h2>Order summary</h2>
-
-      <section className="orderSummary">
+         <section className="orderSummary">
         {cartItems.map((item) => (
           <article className="checkoutItem" key={item.id}>
             <h3>{item.title}</h3>
@@ -108,7 +107,7 @@ export default function CheckoutPage({ onLoginClick }) {
       <h2>Total: {cartTotal} DKK</h2>
 
       <button
-        className="checkoutButton"
+        className="primaryButton"
         onClick={handlePlaceOrder}
         disabled={isSubmitting}
       >

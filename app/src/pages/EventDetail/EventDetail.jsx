@@ -44,18 +44,6 @@ export default function EventDetail() {
     }
   }, [id]);
 
-  function handleQuantityChange(changeEvent) {
-    const value = Number(changeEvent.target.value);
-
-    if (value < 1) {
-      setQuantity(1);
-    } else if (value > event.ticketsAvailable) {
-      setQuantity(event.ticketsAvailable);
-    } else {
-      setQuantity(value);
-    }
-  }
-
   function getPriceMessage() {
     return event.price === 0 ? "Free" : `${event.price} DKK`;
   }
@@ -69,15 +57,15 @@ export default function EventDetail() {
   function getTotalPriceMessage() {
     return event.price === 0 ? "Free" : `${event.price * quantity} DKK`;
   }
-function decreaseTicketQuantity() {
-  setQuantity((currentQuantity) => Math.max(1, currentQuantity - 1));
-}
+  function decreaseTicketQuantity() {
+    setQuantity((currentQuantity) => Math.max(1, currentQuantity - 1));
+  }
 
-function increaseTicketQuantity() {
-  setQuantity((currentQuantity) =>
-    Math.min(event.ticketsAvailable, currentQuantity + 1),
-  );
-}
+  function increaseTicketQuantity() {
+    setQuantity((currentQuantity) =>
+      Math.min(event.ticketsAvailable, currentQuantity + 1),
+    );
+  }
   function handleAddToCart() {
     addToCart(event, quantity);
     setShowCartMessage(true);
@@ -127,35 +115,36 @@ function increaseTicketQuantity() {
           <p>This event is sold out</p>
         ) : (
           <>
-          
-           <div className="ticketQuantity">
-  <p>Ticket Quantity:</p>
-
-  <div className="quantityControls">
-    <button
-      type="button"
-      className="quantityButton"
-      onClick={decreaseTicketQuantity}
-    >
-      −
-    </button>
-
-    <span className="quantityValue">{quantity}</span>
-
-    <button
-      type="button"
-      className="quantityButton"
-      onClick={increaseTicketQuantity}
-    >
-      +
-    </button>
-  </div>
-</div>
-
-            <p>Total price: {getTotalPriceMessage()}</p>
-
             {!showCartMessage && (
-              <button onClick={handleAddToCart}>Add to cart</button>
+              <>
+                <div className="ticketQuantity">
+                  <p>Ticket Quantity:</p>
+
+                  <div className="quantityControls">
+                    <button
+                      type="button"
+                      className="quantityButton"
+                      onClick={decreaseTicketQuantity}
+                    >
+                      −
+                    </button>
+
+                    <span className="quantityValue">{quantity}</span>
+
+                    <button
+                      type="button"
+                      className="quantityButton"
+                      onClick={increaseTicketQuantity}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <p>Total price: {getTotalPriceMessage()}</p>
+
+                <button onClick={handleAddToCart}>Add to cart</button>
+              </>
             )}
 
             {showCartMessage && (
@@ -165,11 +154,11 @@ function increaseTicketQuantity() {
                 </p>
 
                 <div className="cartMessageActions">
-                  <button onClick={() => setShowCartMessage(false)}>
+                  <Link to="/events" className="secondaryButton">
                     Continue browsing
-                  </button>
+                  </Link>
 
-                  <Link to="/cart" className="goToCartButton">
+                  <Link to="/cart" className="primaryButton">
                     Go to cart
                   </Link>
                 </div>

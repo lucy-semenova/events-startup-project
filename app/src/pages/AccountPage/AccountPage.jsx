@@ -46,12 +46,12 @@ function AccountPage() {
         </div>
 
         <div className="accountActions">
-          <Link to="/orders" className="primaryAccountButton">
+          <Link to="/orders" className="primaryButton">
             <ReceiptText size={18} />
             View orders
           </Link>
 
-          <button className="secondaryAccountButton" onClick={handleLogout}>
+          <button className="secondaryButton" onClick={handleLogout}>
             Sign out
           </button>
         </div>

@@ -31,6 +31,9 @@ function CartPage() {
         <div className="cartEmpty">
           <h1>Your Cart</h1>
           <p>Your cart is empty.</p>
+          <button className="primaryButton" onClick={() => navigate("/")}>
+            Browse events
+          </button>
         </div>
       </section>
     );

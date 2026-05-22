@@ -4,15 +4,15 @@ import api from "../services/api.js";
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
- const [user, setUser] = useState(() => {
-  try {
-    const stored = localStorage.getItem("user");
-    return stored ? JSON.parse(stored) : null;
-  } catch (error) {
-    console.error("Failed to parse stored user");
-    return null;
-  }
-});
+  const [user, setUser] = useState(() => {
+    try {
+      const stored = localStorage.getItem("user");
+      return stored ? JSON.parse(stored) : null;
+    } catch (error) {
+      console.error("Failed to parse stored user");
+      return null;
+    }
+  });
   const [token, setToken] = useState(() => {
     return localStorage.getItem("token") || null;
   });
@@ -68,7 +68,6 @@ export function AuthProvider({ children }) {
   );
 }
 
-// Usage: const { user, token, login, register, logout } = useAuth();
 export function useAuth() {
   return useContext(AuthContext);
 }

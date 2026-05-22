@@ -8,7 +8,7 @@ import AccountPage from "./pages/AccountPage/AccountPage";
 import OrdersPage from "./pages/OrdersPage/OrdersPage";
 import EventDetail from "./pages/EventDetail/EventDetail";
 import { useAuth } from "./context/AuthContext";
-import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
+import CheckoutPage from "./pages/Checkoutpage/CheckoutPage";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);

@@ -81,6 +81,8 @@ export function CartProvider({ children }) {
         cartItems,
         addToCart,
         removeFromCart,
+        increaseQuantity,
+  decreaseQuantity,
         updateQuantity,
         clearCart,
         cartCount,
