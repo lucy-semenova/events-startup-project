@@ -20,11 +20,11 @@ https://events-startup-project-app.onrender.com/
 
 ## Screenshots
 
-./app/public/homepage.png
+![Homepage](app/public/homepage.png)
 
 ## Demo Video
 
-./app/public/demo.mp4
+[Watch Demo Video](app/public/demo.mp4)
 
 ## Tech Stack
 
